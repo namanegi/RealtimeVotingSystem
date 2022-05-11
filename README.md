@@ -3,21 +3,28 @@
 A system that can updated new question/options by teacher, and voted by students, written in vue.js and node.js.
 The result will be shown in real time by Websocket.
 
-# how to run this system in dev env
+## how to run this system in dev env
 
 For ws Server:
+```
 node .\server\server.js
+```
 
 For vue frontend
 (npm install)
+```
 npm run serve
+```
 
-# how to build this project
+## how to build this project
 
+```
 npm run build
+```
 
 use the build directory, and start up http server with wsSever like below
 
+```
 const server = http.createServer(function(req, res) {
   if (req.url === '/') {
     fs.readFile('./index.html', 'UTF-8', (err, html) => {
@@ -36,4 +43,4 @@ const server = http.createServer(function(req, res) {
     jsStream.pipe(res);
   }
 }).listen(port);
-
+```
